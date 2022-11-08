@@ -39,14 +39,18 @@ li {
     margin-bottom: 30px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .easy {
-    color: rgb(255, 199, 0);
+    color: rgb(255, 199, 0) !important;
 }
 
 .medium {
-    color: rgb(0, 190, 42);
+    color: rgb(0, 190, 42) !important;
 }
 
 .hard {
-    color: rgb(255, 32, 32);
+    color: rgb(255, 32, 32) !important;
 }
