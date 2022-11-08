@@ -1,0 +1,52 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(7, 0, 49);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+ul {
+    padding-inline-start: 0 !important;
+}
+
+li {
+    background-color: white;
+    padding: 5px 0;
+    border-radius: 10px;
+    font-size: 20px;
+    list-style: none;
+    text-align: center;
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.easy {
+    color: rgb(255, 199, 0);
+}
+
+.medium {
+    color: rgb(0, 190, 42);
+}
+
+.hard {
+    color: rgb(255, 32, 32);
+}
