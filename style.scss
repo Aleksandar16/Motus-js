@@ -1,5 +1,5 @@
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -48,6 +48,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   margin: auto;
+
 }
 
 td {
@@ -60,6 +61,7 @@ td {
   filter: brightness(1);
   background-clip: padding-box;
 }
+
 
 .easy {
   color: rgb(255, 199, 0);
@@ -81,14 +83,13 @@ td {
   margin: 0 auto;
   width: 100%;
   gap: 10px;
-}
-.keyboard-row {
-  display: flex;
-  gap: 10px;
-  width: auto;
-  justify-content: center;
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
-/*# sourceMappingURL=style.css.map */
+  &-row {
+    display: flex;
+    gap: 10px;
+    width: auto;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
