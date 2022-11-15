@@ -61,6 +61,10 @@ td {
   background-clip: padding-box;
 }
 
+a {
+  text-transform: none;
+}
+
 .easy {
   color: rgb(255, 199, 0);
 }
