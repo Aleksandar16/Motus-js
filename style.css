@@ -28,7 +28,7 @@ ul {
   padding-inline-start: 0 !important;
 }
 
-li {
+button {
   background-color: white;
   padding: 5px 0;
   border-radius: 10px;
@@ -39,9 +39,12 @@ li {
   margin-bottom: 30px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 table, tr, td {
   border: rgb(255, 255, 255) solid 1px;
-  background-color: royalblue;
 }
 
 table {
@@ -50,7 +53,7 @@ table {
   margin: auto;
 }
 
-td {
+input {
   width: 45px;
   height: 45px;
   text-align: center;
@@ -59,40 +62,22 @@ td {
   font-weight: bold;
   filter: brightness(1);
   background-clip: padding-box;
+  font-size: 30px;
+  background-color: royalblue;
+  color: white;
+  border: none;
 }
 
-a {
-  text-transform: none;
-}
-
-.easy {
+#easy {
   color: rgb(255, 199, 0);
 }
 
-.medium {
+#medium {
   color: rgb(0, 190, 42);
 }
 
-.hard {
+#hard {
   color: rgb(255, 32, 32);
-}
-
-.keyboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  gap: 10px;
-}
-.keyboard-row {
-  display: flex;
-  gap: 10px;
-  width: auto;
-  justify-content: center;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
