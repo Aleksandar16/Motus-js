@@ -1,4 +1,4 @@
-let gameStarted;
+var gameStarted;
 
 function linkName(link) {
     document.querySelector(".container").style.display = 'block';
