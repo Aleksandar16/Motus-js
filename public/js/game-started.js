@@ -1,16 +1,16 @@
-function isGameStart() {
-    if(gameStart === true) {
-        document.querySelector(".container").style.display = 'block';
-        document.querySelector("h2").style.display = 'none';
+export const isGameStart = (gameStart) => {
+    if(gameStart() === true) {
+        document.querySelector(".container").classList.remove("hide");
+        document.querySelector("h2").classList.add("hide");
         document.querySelectorAll("li").forEach(function(el) {
-            el.style.display = 'none';
+            el.classList.add("hide");
         });
     }
-    if(gameStart === false) {
-        document.querySelector(".container").style.display = 'none';
-        document.querySelector("h2").style.display = 'block';
+    if(gameStart() === false) {
+        document.querySelector(".container").classList.add("hide");
+        document.querySelector("h2").classList.remove("hide");
         document.querySelectorAll("li").forEach(function(el) {
-            el.style.display = 'block';
+            el.classList.remove("hide");
         });
     }
 }

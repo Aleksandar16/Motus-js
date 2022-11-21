@@ -65,6 +65,9 @@ input {
   text-transform: uppercase;
 }
 
+input:focus {
+  border: white;
+}
 
 #easy {
   color: rgb(255, 199, 0);

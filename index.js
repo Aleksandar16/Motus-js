@@ -10,4 +10,4 @@ app.get('', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-app.listen(port, () => console.info(`Listening on port ${port} on http://localhost:3000`))
+app.listen(port, () => console.info(`Listening on http://localhost:3000`))

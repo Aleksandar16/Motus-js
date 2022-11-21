@@ -14,23 +14,23 @@
     <h2>JOUER</h2>
     <section>
         <ul>
-            <li style="display: block;"><button type="button" id="easy" onclick="linkName(easy)">FACILE</button></li>
-            <li style="display: block;"><button type="button" id="medium" onclick="linkName(medium)">MOYEN</a></li>
-            <li style="display: block;"><button type="button" id="hard" onclick="linkName(hard)">DIFFICILE</a></li>
+            <li><button type="button" id="easy" data-difficulty="easy">FACILE</button></li>
+            <li><button type="button" id="medium" data-difficulty="medium">MOYEN</a></li>
+            <li><button type="button" id="hard" data-difficulty="hard">DIFFICILE</a></li>
         </ul>
     </section>
-    <div class="container" style="display: none;">
+    <div class="container hide">
         <table>
             <thead></thead>
             <tbody>
             <tr>
-                <td class="field"><input type="text" maxlength="1"></td>
-                <td class="field"><input type="text" maxlength="1"></td>
-                <td class="field"><input type="text" maxlength="1"></td>
-                <td class="field"><input type="text" maxlength="1"></td>
-                <td class="field"><input type="text" maxlength="1"></td>
-                <td class="field"><input type="text" maxlength="1"></td>
-                <td class="field"><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
+                <td><input type="text" maxlength="1"></td>
             </tr>
             <tr>
                 <td><input type="text" maxlength="1"></td>
@@ -81,13 +81,10 @@
         </table>
         <br>
         <div id="btn">
-            <button onclick="forfeit()">Abandonner</button>
+            <button id="forfeit">Abandonner</button>
             <button>Valider</button>
         </div>
     </div>
-    <script src="js/level.js"></script>
-    <script src="js/game-started.js"></script>
-    <script src="js/forfeit.js"></script>
-    <script src="js/input.js"></script>
+    <script type="module" defer src="js/main.js"></script>
 </body>
 </html>

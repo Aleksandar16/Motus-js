@@ -6,6 +6,10 @@ body {
   background-color: rgb(7, 0, 49);
 }
 
+.hide {
+  display: none;
+}
+
 h1 {
   color: white;
   text-align: center;
@@ -67,6 +71,10 @@ input {
   color: white;
   border: none;
   text-transform: uppercase;
+}
+
+input:focus {
+  border: white;
 }
 
 #easy {
