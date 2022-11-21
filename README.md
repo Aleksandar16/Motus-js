@@ -3,6 +3,6 @@
 Réalisation du jeu Motus en javascript vanilla.
 
 Lancer le projet en local : 
-    * - cd Motus-js
-    * - npm start
-    * - http://localhost:3000
+    1. cd Motus-js
+    2. npm start
+    3. http://localhost:3000
