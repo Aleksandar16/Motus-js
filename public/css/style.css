@@ -32,6 +32,10 @@ ul {
   padding-inline-start: 0 !important;
 }
 
+li {
+  list-style: none;
+}
+
 button {
   background-color: white;
   padding: 5px 0;
