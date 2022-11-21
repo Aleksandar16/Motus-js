@@ -68,7 +68,7 @@ for (let i = 1; i < 8; i++) {
     });
 }
 
-// seulement quand chaqué case est remplie, les inputs sont bloqués
+// seulement quand chaque case est remplie, les inputs sont bloqués
 for (let i = 1; i < 8; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
         if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
@@ -79,12 +79,12 @@ for (let i = 1; i < 8; i++) {
     });
 }
 
-// seulement quand chaqué case est remplie, si la lettre ne fait pas partie du mot à trouver, on colorise le background de la lettre en rouge
+// seulement quand chaque case est remplie, on ajoute un listener qui si une lettre n'est pas dans le mot, colorise le background de la lettre en rouge
 for (let i = 1; i < 8; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
         if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
             for (let i = 1; i < 8; i++) {
-                if (resultArray.includes(motArray[i - 1]) === false) {
+                if (resultArray.includes(document.getElementById("case" + i).value) === false) {
                     document.getElementById("case" + i).style.backgroundColor = "red";
                 }
             }
@@ -92,25 +92,26 @@ for (let i = 1; i < 8; i++) {
     });
 }
 
-// seulement quand chaqué case est remplie, si la lettre fait partie du mot à trouver et qu'elle est à la bonne place, on colorise le background de la lettre en vert
+// seulement quand chaque case est remplie, on ajoute un listener qui si une lettre est dans le mot, mais à la mauvaise place, colorise le background de la lettre en jaune
 for (let i = 1; i < 8; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
         if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
             for (let i = 1; i < 8; i++) {
-                if (resultArray[i - 1] === motArray[i - 1]) {
-                    document.getElementById("case" + i).style.backgroundColor = "green";
+                if (resultArray.includes(document.getElementById("case" + i).value) && resultArray[i - 1] !== document.getElementById("case" + i).value) {
+                    document.getElementById("case" + i).style.backgroundColor = "yellow";
                 }
             }
         }
     });
 }
-// seulement quand chaqué case est remplie, si la lettre fait partie du mot à trouver et qu'elle est à la mauvaise place, on colorise le background de la lettre en jaune
+
+// seulement quand chaque case est remplie, on ajoute un listener qui si une lettre est dans le mot et à la bonne place, colorise le background de la lettre en vert
 for (let i = 1; i < 8; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
         if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
             for (let i = 1; i < 8; i++) {
-                if (resultArray.includes(motArray[i - 1]) === true && resultArray[i - 1] !== motArray[i - 1]) {
-                    document.getElementById("case" + i).style.backgroundColor = "yellow";
+                if (resultArray.includes(document.getElementById("case" + i).value) && resultArray[i - 1] === document.getElementById("case" + i).value) {
+                    document.getElementById("case" + i).style.backgroundColor = "green";
                 }
             }
         }
