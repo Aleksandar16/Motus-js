@@ -66,6 +66,7 @@ input {
   background-color: royalblue;
   color: white;
   border: none;
+  text-transform: uppercase;
 }
 
 #easy {
@@ -78,6 +79,10 @@ input {
 
 #hard {
   color: rgb(255, 32, 32);
+}
+
+#btn {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

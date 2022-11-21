@@ -1,10 +1,12 @@
-var gameStarted;
+var gameStart;
 
 function linkName(link) {
-    document.querySelector(".container").style.display = 'block';
-    document.querySelectorAll("li").forEach(function(el) {
-        el.style.display = 'none';
-    });
-    const levelName = link;
-    gameStarted = true; 
+    gameStart = true;
+    isGameStart();
+    const onConfirmRefresh = function (event) {
+        event.preventDefault();
+        return event.returnValue = "Attention";
+    }
+      
+    window.addEventListener("beforeunload", onConfirmRefresh, { capture: true });
 }
