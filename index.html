@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <title>Motus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Import du style et de la font -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Titre du jeu-->
     <header>
         <h1>MOTUS</h1>
     </header>
     <h2>JOUER</h2>
     <section>
+        <!-- Bouttons pour jouer en fonction du niveau de difficulté -->
         <ul>
             <li><button type="button" id="easy" data-difficulty="easy">FACILE</button></li>
-            <li><button type="button" id="medium" data-difficulty="medium">MOYEN</a></li>
-            <li><button type="button" id="hard" data-difficulty="hard">DIFFICILE</a></li>
+            <li><button type="button" id="medium" data-difficulty="medium">MOYEN</button></li>
+            <li><button type="button" id="hard" data-difficulty="hard">DIFFICILE</button></li>
         </ul>
     </section>
+    <!-- Tableau qui va contenir les lignes du jeu -->
     <div class="container hide">
         <table>
             <thead></thead>
@@ -80,11 +84,13 @@
             </tbody>
         </table>
         <br>
+        <!-- Bouttons pour abandonner la partie / Valider la ligne -->
         <div id="btn">
             <button id="forfeit">Abandonner</button>
             <button>Valider</button>
         </div>
     </div>
+    <!-- Import du script js principal -->
     <script type="module" defer src="js/main.js"></script>
 </body>
 </html>
