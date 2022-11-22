@@ -1,5 +1,7 @@
 import { linkName } from "./level.js";
 import { isGameStart } from "./game-started.js";
+import { randomWordApi } from "./wording.js";
+import { wordlist } from "./wordlist.js";
 
 const t = (x) => {
     let a = x;
@@ -19,35 +21,10 @@ document.querySelector("#forfeit").addEventListener("click", () => {
     isGameStart(gameStart);
 })
 
-// on pioche un mot aléatoire dans le dictionnaire
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-};
-
-let result = fetch("https://random-word-api.herokuapp.com/word?number=1", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-
-
-// tant que result à moins ou plus de 5 lettres, on pioche un autre mot
-while (result.length < 5 || result.length > 5) {
-    result = fetch("https://random-word-api.herokuapp.com/word?number=1", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-}
-
-// on transforme le result en string
-let resultString = result.toString();
-// on split le result en lettres dans un tableau
-let resultArray = resultString.split("");
-
-// ce qui donne par exemple : ["a", "b", "c", "d", "e"]
+let wordToGuess = randomWordApi(wordlist, 5);
 
 // on récupère la value de chaque input allant de l'id 'case1' à 'case5' et on forme un mot
-let mot =
+let wordToWrite =
     document.getElementById("case1").value +
     document.getElementById("case2").value +
     document.getElementById("case3").value +
@@ -56,11 +33,8 @@ let mot =
     document.getElementById("case6").value +
     document.getElementById("case7").value;
 
-// on split le mot en lettres dans un tableau
-let motArray = mot.split("");
-
 // on ajoute aux inputs un listener qui vérifie que chaque input ne contient qu'une seule lettre et bloque la saisie si ce n'est pas le cas
-for (let i = 1; i < 8; i++) {
+for (let i = 1; i <= 7; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
         if (this.value.length > 1) {
             this.value = this.value.slice(0, 1);
@@ -69,50 +43,54 @@ for (let i = 1; i < 8; i++) {
 }
 
 // seulement quand chaque case est remplie, les inputs sont bloqués
-for (let i = 1; i < 8; i++) {
+for (let i = 1; i <= 7; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
-        if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
-            for (let i = 1; i < 8; i++) {
+        if (
+            document.getElementById("case1").value != "" &&
+            document.getElementById("case2").value != "" &&
+            document.getElementById("case3").value != "" &&
+            document.getElementById("case4").value != "" &&
+            document.getElementById("case5").value != "" &&
+            document.getElementById("case6").value != "" &&
+            document.getElementById("case7").value != ""
+        ) {
+            for (let i = 1; i <= 7; i++) {
                 document.getElementById("case" + i).disabled = true;
             }
         }
     });
 }
 
-// seulement quand chaque case est remplie, on ajoute un listener qui si une lettre n'est pas dans le mot, colorise le background de la lettre en rouge
-for (let i = 1; i < 8; i++) {
-    document.getElementById("case" + i).addEventListener("input", function () {
-        if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
-            for (let i = 1; i < 8; i++) {
-                if (resultArray.includes(document.getElementById("case" + i).value) === false) {
-                    document.getElementById("case" + i).style.backgroundColor = "red";
-                }
-            }
-        }
-    });
-}
+// on console log le type de wordToGuess et wordToWrite pour voir si c'est bien un string
+console.log(typeof wordToGuess);
+console.log(typeof wordToWrite);
 
-// seulement quand chaque case est remplie, on ajoute un listener qui si une lettre est dans le mot, mais à la mauvaise place, colorise le background de la lettre en jaune
-for (let i = 1; i < 8; i++) {
-    document.getElementById("case" + i).addEventListener("input", function () {
-        if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
-            for (let i = 1; i < 8; i++) {
-                if (resultArray.includes(document.getElementById("case" + i).value) && resultArray[i - 1] !== document.getElementById("case" + i).value) {
-                    document.getElementById("case" + i).style.backgroundColor = "yellow";
-                }
-            }
-        }
-    });
-}
+// on converti l'objet wordToGuess en string
+wordToGuess = wordToGuess.toString();
+console.log(typeof wordToGuess);
 
-// seulement quand chaque case est remplie, on ajoute un listener qui si une lettre est dans le mot et à la bonne place, colorise le background de la lettre en vert
-for (let i = 1; i < 8; i++) {
+// on converti wordToGuess et wordToWrite en array
+wordToGuess = wordToGuess.split("");
+wordToWrite = wordToWrite.split("");
+
+// on compare les deux arrays avec un listener quand toutes les cases sont remplis qui
+// si les deux arrays sont identiques, on console log "gagné"
+// sinon on console log "perdu"
+for (let i = 1; i <= 7; i++) {
     document.getElementById("case" + i).addEventListener("input", function () {
-        if (document.getElementById("case1").value !== "" && document.getElementById("case2").value !== "" && document.getElementById("case3").value !== "" && document.getElementById("case4").value !== "" && document.getElementById("case5").value !== "" && document.getElementById("case6").value !== "" && document.getElementById("case7").value !== "") {
-            for (let i = 1; i < 8; i++) {
-                if (resultArray.includes(document.getElementById("case" + i).value) && resultArray[i - 1] === document.getElementById("case" + i).value) {
-                    document.getElementById("case" + i).style.backgroundColor = "green";
-                }
+        if (
+            document.getElementById("case1").value != "" &&
+            document.getElementById("case2").value != "" &&
+            document.getElementById("case3").value != "" &&
+            document.getElementById("case4").value != "" &&
+            document.getElementById("case5").value != "" &&
+            document.getElementById("case6").value != "" &&
+            document.getElementById("case7").value != ""
+        ) {
+            if (wordToGuess.toString() === wordToWrite.toString()) {
+                console.log("gagné");
+            } else {
+                console.log("perdu");
             }
         }
     });
