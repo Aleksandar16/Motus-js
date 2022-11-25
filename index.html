@@ -1,180 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Motus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Import du style et de la font -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Titre du jeu-->
     <header>
-        <h1>MOTUS</h1>
+      <h1>MOTUS</h1>
     </header>
     <h2>JOUER</h2>
     <section>
-        <!-- Bouttons pour jouer en fonction du niveau de difficulté -->
-        <ul>
-            <li><button type="button" id="easy" data-difficulty="easy">FACILE</button></li>
-            <li><button type="button" id="medium" data-difficulty="medium">MOYEN</button></li>
-            <li><button type="button" id="hard" data-difficulty="hard">DIFFICILE</button></li>
-        </ul>
+      <!-- Bouttons pour jouer en fonction du niveau de difficulté -->
+      <ul>
+        <li>
+          <button type="button" id="easy" data-difficulty="easy">FACILE</button>
+        </li>
+        <li>
+          <button type="button" id="medium" data-difficulty="medium">
+            MOYEN
+          </button>
+        </li>
+        <li>
+          <button type="button" id="hard" data-difficulty="hard">
+            DIFFICILE
+          </button>
+        </li>
+      </ul>
     </section>
     <!-- Tableau qui va contenir les lignes du jeu -->
     <div class="container hide">
-        <table>
-            <thead></thead>
-            <tbody>
-            <tr id="colonne1">
-                <td class="field">
-                    <input type="text" id="case1" minlength="1" maxlength="1" />
-                </td>
-                <td class="field">
-                    <input type="text" id="case2" minlength="1" maxlength="1" />
-                </td>
-                <td class="field">
-                    <input type="text" id="case3" minlength="1" maxlength="1" />
-                </td>
-                <td class="field">
-                    <input type="text" id="case4" minlength="1" maxlength="1" />
-                </td>
-                <td class="field">
-                    <input type="text" id="case5" minlength="1" maxlength="1" />
-                </td>
-                <td class="field">
-                    <input type="text" id="case6" minlength="1" maxlength="1" />
-                </td>
-                <td class="field">
-                    <input type="text" id="case7" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-            <tr id="colonne2">
-                <td>
-                    <input type="text" id="case8" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case9" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case10" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case11" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case12" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case13" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case14" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-            <tr id="colonne3">
-                <td>
-                    <input type="text" id="case15" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case16" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case17" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case18" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case19" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case20" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case21" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-            <tr id="colonne4">
-                <td>
-                    <input type="text" id="case22" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case23" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case24" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case25" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case26" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case27" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case28" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-            <tr id="colonne5">
-                <td>
-                    <input type="text" id="case29" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case30" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case31" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case32" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case33" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case34" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case35" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-            <tr id="colonne6">
-                <td>
-                    <input type="text" id="case36" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case37" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case38" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case39" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case40" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case41" minlength="1" maxlength="1" />
-                </td>
-                <td>
-                    <input type="text" id="case42" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <br>
-        <!-- Bouttons pour abandonner la partie / Valider la ligne -->
-        <div id="btn">
-            <button id="forfeit">Abandonner</button>
-            <button>Valider</button>
-        </div>
+      <table>
+        <thead></thead>
+        <tbody>
+          <tr id="colonne1">
+            <td class="field">
+              <input type="text" id="case1" minlength="1" maxlength="1" />
+            </td>
+            <td class="field">
+              <input type="text" id="case2" minlength="1" maxlength="1" />
+            </td>
+            <td class="field">
+              <input type="text" id="case3" minlength="1" maxlength="1" />
+            </td>
+            <td class="field">
+              <input type="text" id="case4" minlength="1" maxlength="1" />
+            </td>
+            <td class="field">
+              <input type="text" id="case5" minlength="1" maxlength="1" />
+            </td>
+            <td class="field">
+              <input type="text" id="case6" minlength="1" maxlength="1" />
+            </td>
+            <td class="field">
+              <input type="text" id="case7" minlength="1" maxlength="1" />
+            </td>
+          </tr>
+          <tr id="colonne2">
+            <td>
+              <input type="text" id="case8" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case9" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case10" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case11" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case12" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case13" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case14" minlength="1" maxlength="1" />
+            </td>
+          </tr>
+          <tr id="colonne3">
+            <td>
+              <input type="text" id="case15" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case16" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case17" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case18" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case19" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case20" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case21" minlength="1" maxlength="1" />
+            </td>
+          </tr>
+          <tr id="colonne4">
+            <td>
+              <input type="text" id="case22" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case23" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case24" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case25" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case26" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case27" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case28" minlength="1" maxlength="1" />
+            </td>
+          </tr>
+          <tr id="colonne5">
+            <td>
+              <input type="text" id="case29" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case30" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case31" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case32" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case33" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case34" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case35" minlength="1" maxlength="1" />
+            </td>
+          </tr>
+          <tr id="colonne6">
+            <td>
+              <input type="text" id="case36" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case37" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case38" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case39" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case40" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case41" minlength="1" maxlength="1" />
+            </td>
+            <td>
+              <input type="text" id="case42" minlength="1" maxlength="1" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <!-- Bouttons pour abandonner la partie / Valider la ligne -->
+      <div id="btn">
+        <button id="forfeit">Abandonner</button>
+        <button>Valider</button>
+      </div>
     </div>
     <!-- Import du script js principal -->
     <script type="module" defer src="js/main.js"></script>
-</body>
+  </body>
 </html>

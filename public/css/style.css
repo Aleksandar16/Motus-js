@@ -51,7 +51,9 @@ button:hover {
   cursor: pointer;
 }
 
-table, tr, td {
+table,
+tr,
+td {
   border: rgb(255, 255, 255) solid 1px;
 }
 
