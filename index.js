@@ -1,13 +1,13 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const app = express();
+const port = 3000;
 
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/css'))
-app.use('/js', express.static(__dirname + 'public/js'))
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use("/js", express.static(__dirname + "public/js"));
 
-app.get('', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+app.get("", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
-app.listen(port, () => console.info(`Listening on http://localhost:3000`))
+app.listen(port, () => console.info(`Listening on http://localhost:3000`));

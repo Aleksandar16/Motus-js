@@ -1,21 +1,22 @@
 {
-    "name": "motus",
-    "version": "1.0.0",
-    "description": "Motus js",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon index.js"
-    },
-    "author": {
-        "name": "Aleksandar Milenkovic et Victor De Domenico"
-    },
-    "license": "ISC",
-    "dependencies": {
-        "ejs": "^3.1.8",
-        "express": "^4.18.2"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.20"
-    }
+  "name": "motus",
+  "version": "1.0.0",
+  "description": "Motus js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": {
+    "name": "Aleksandar Milenkovic et Victor De Domenico"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "prettier": "2.8.0"
+  }
 }
