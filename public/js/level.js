@@ -1,7 +1,6 @@
 import { gameStart } from "./game-started.js";
 
 export const linkName = (difficulty) => {
-  console.log(difficulty);
   gameStart(difficulty);
   const onConfirmRefresh = function (event) {
     event.preventDefault();
