@@ -78,7 +78,3 @@ export const generateTable = (difficulty) => {
         game(wordToGuess, lengthHard);
     }
 }
-
-export const deleteTable = () => {
-    document.querySelector(".container").innerHTML = ``
-}

@@ -7,5 +7,4 @@ export const linkName = (difficulty) => {
     return (event.returnValue = "Attention");
   };
   window.addEventListener("beforeunload", onConfirmRefresh, { capture: true });
-  document.querySelector("#case1").setAttribute('autofocus', 'autofocus');
 };
