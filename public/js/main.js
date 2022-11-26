@@ -1,26 +1,16 @@
 import { linkName } from "./level.js";
-import { isGameStart } from "./game-started.js";
+import { gameStart, gameStop } from "./game-started.js";
 import { randomWord } from "./wording.js";
 import { wordlist } from "./wordlist.js";
 
-const t = (x) => {
-  let a = x;
-  const getT = () => a;
-  const setT = (b) => (a = b);
-  return [getT, setT];
-};
-
-const [gameStart, setGameStart] = t(false);
-
 [...document.querySelectorAll("button[data-difficulty]")].map((b) => {
   b.addEventListener("click", () => {
-    linkName(b.dataset.difficulty, setGameStart, gameStart);
+    linkName(b.dataset.difficulty);
   });
 });
 
 document.querySelector("#forfeit").addEventListener("click", () => {
-  setGameStart(false);
-  isGameStart(gameStart);
+  gameStop();
 });
 
 // let wordToGuess = randomWordApi(wordlist, 7);
