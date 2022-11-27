@@ -16,7 +16,7 @@ export const generateTable = (difficulty) => {
                 const td = tr.insertCell();
                 var input = document.createElement('input');
                 input.type = "text";
-                input.classList.add("case" + k);
+                input.setAttribute("id", "case" + k);
                 input.setAttribute("minLength", 1);
                 input.setAttribute("maxLength", 1);
                 td.appendChild(input);
@@ -41,7 +41,7 @@ export const generateTable = (difficulty) => {
                 const td = tr.insertCell();
                 var input = document.createElement('input');
                 input.type = "text";
-                input.classList.add("case" + k);
+                input.setAttribute("id", "case" + k);
                 input.setAttribute("minLength", 1);
                 input.setAttribute("maxLength", 1);
                 td.appendChild(input);
@@ -66,7 +66,7 @@ export const generateTable = (difficulty) => {
                 const td = tr.insertCell();
                 var input = document.createElement('input');
                 input.type = "text";
-                input.classList.add("case" + k);
+                input.setAttribute("id", "case" + k);
                 input.setAttribute("minLength", 1);
                 input.setAttribute("maxLength", 1);
                 td.appendChild(input);
