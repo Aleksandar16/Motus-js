@@ -1,6 +1,9 @@
 export const game = (wordToGuess, lengthWord) => {
     console.log(wordToGuess);
     let wordToGuessArray = wordToGuess.split("");
+
+    document.querySelector("#case1").value = wordToGuessArray[0];
+    document.querySelector("#case1").disabled = true;
     
     // on ajoute aux inputs un listener qui vérifie que chaque input ne contient qu'une seule lettre et bloque la saisie si ce n'est pas le cas
     for (let i = 1; i < lengthWord + 1; i++) {
@@ -60,12 +63,12 @@ for (let i = 1; i < lengthWord + 1; i++) {
             document.querySelector("#case" + (k + 1)).style.backgroundColor =
               "red";
             // on replace ces lettres sur la deuxième ligne
-            document.querySelector("#case" + (k + 8)).value = wordArray[k];
+            document.querySelector("#case" + (lengthWord + (k+1))).value = wordArray[k];
             // on colorie la case en red
-            document.querySelector("#case" + (k + 8)).style.backgroundColor =
-              "red";
+            document.querySelector("#case" + (lengthWord + (k+1))).style.backgroundColor =
+              "royalblue";
             // on bloque l'input
-            document.querySelector("#case" + (k + 8)).disabled = true;
+            document.querySelector("#case" + (lengthWord + (k+1))).disabled = true;
           } else if (wordToGuessArray.includes(wordArray[k])) {
             document.querySelector("#case" + (k + 1)).style.backgroundColor =
               "orange";
