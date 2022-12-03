@@ -1,34 +1,34 @@
 export const game = (wordToGuess, lengthWord) => {
-    console.log(wordToGuess);
-    let wordToGuessArray = wordToGuess.split("");
+  console.log(wordToGuess);
+  let wordToGuessArray = wordToGuess.split("");
 
-    document.querySelector("#case1").value = wordToGuessArray[0];
-    document.querySelector("#case1").disabled = true;
+  document.querySelector("#case1").value = wordToGuessArray[0];
+  document.querySelector("#case1").disabled = true;
     
-    // on ajoute aux inputs un listener qui vérifie que chaque input ne contient qu'une seule lettre et bloque la saisie si ce n'est pas le cas
-    for (let i = 1; i < lengthWord + 1; i++) {
-        document.getElementById("case" + i).addEventListener("input", function () {
-          if (this.value.length > 1) {
-            this.value = this.value.slice(0, 1);
-          }
-        });
+  // on ajoute aux inputs un listener qui vérifie que chaque input ne contient qu'une seule lettre et bloque la saisie si ce n'est pas le cas
+  for (let i = 1; i < lengthWord + 1; i++) {
+    document.getElementById("case" + i).addEventListener("input", function () {
+      if (this.value.length > 1) {
+        this.value = this.value.slice(0, 1);
       }
+    });
+  }
       
-      // on ajoute aux inputs un listener qui lowercase la lettre saisie
-      for (let i = 1; i < lengthWord + 1; i++) {
-        document.getElementById("case" + i).addEventListener("input", function () {
-          this.value = this.value.toLowerCase();
-        });
-      }
+  // on ajoute aux inputs un listener qui lowercase la lettre saisie
+  for (let i = 1; i < lengthWord + 1; i++) {
+    document.getElementById("case" + i).addEventListener("input", function () {
+      this.value = this.value.toLowerCase();
+    });
+  }
       
-      // on bloque tous les inputs de la case 8 à la case 42
-      for (let i = (lengthWord + 1); i < ((lengthWord * 6) + 1); i++) {
-        document.getElementById("case" + i).disabled = true;
-      }
+  // on bloque tous les inputs de la case 8 à la case 42
+  for (let i = (lengthWord + 1); i < ((lengthWord * 6) + 1); i++) {
+    document.getElementById("case" + i).disabled = true;
+  }
 
-      // première ligne
-// on ajoute un listener qui quand un input est rempli, récupère la valeur de l'input allant de l'id 'case1' à 'case7' et on forme un mot avec les lettres entrées et on le console.log à la fin une fois que chaque input est rempli
-for (let i = 1; i < lengthWord + 1; i++) {
+  // première ligne
+  // on ajoute un listener qui quand un input est rempli, récupère la valeur de l'input allant de l'id 'case1' à 'case7' et on forme un mot avec les lettres entrées et on le console.log à la fin une fois que chaque input est rempli
+  for (let i = 1; i < lengthWord + 1; i++) {
     document.querySelector("#case" + i).addEventListener("input", () => {
       let word = "";
       for (let j = 1; j < lengthWord + 1; j++) {
@@ -38,9 +38,6 @@ for (let i = 1; i < lengthWord + 1; i++) {
         console.log(word);
         // on transforme le mot en tableau de lettres
         let wordArray = word.split("");
-        // on console log les tableaux pour voir si ça marche
-        console.log(wordArray);
-        console.log(wordToGuessArray);
         // On bloque les inputs de la première ligne
         for (let i = 1; i < lengthWord + 1; i++) {
           document.getElementById("case" + i).disabled = true;
@@ -55,7 +52,7 @@ for (let i = 1; i < lengthWord + 1; i++) {
         }
         // on compare les tableaux
         // pour chaque lettre du mot à trouver, on compare avec chaque lettre du mot entré
-        // si la lettre du mot à trouver est dans le mot entré et est à la même position, on colorie la case en red
+        // si la lettre du mot à trouver est dans le mot entré et est à la même position, on colorie la case en rouge
         // si la lettre du mot à trouver est dans le mot entré mais pas à la même position, on colorie la case en orange
         // si la lettre du mot à trouver n'est pas dans le mot entré, on colorie la case en bleu
         for (let k = 0; k < wordToGuessArray.length; k++) {
@@ -64,7 +61,7 @@ for (let i = 1; i < lengthWord + 1; i++) {
               "red";
             // on replace ces lettres sur la deuxième ligne
             document.querySelector("#case" + (lengthWord + (k+1))).value = wordArray[k];
-            // on colorie la case en red
+            // on colorie la case en bleu
             document.querySelector("#case" + (lengthWord + (k+1))).style.backgroundColor =
               "royalblue";
             // on bloque l'input
